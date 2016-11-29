@@ -1,0 +1,25 @@
+#jumbo-header {
+  background: #222222;
+  height: 500px;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    border: 0;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+
+  .custom-nav {
+    padding-top: 15px;
+  }
+
+}
