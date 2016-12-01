@@ -77,9 +77,9 @@
     $(document).ready(function () {
       $('.nav-link').on('click', function () {
         var link = $(this).attr('href');
-        console.log(link);
+        $('#navbar-collapse-1').collapse('hide');
         $('html, body').animate({
-          scrollTop: $(link).offset().top
+          scrollTop: $(link).offset().top - 122
         }, 500);
         return false;
       })
@@ -87,6 +87,7 @@
 
     $(document).ready(function () {
       $(document).scroll(function () {
+        var testHeight
         var $document = $(document);
         if ($document.scrollTop() >= 100) {
           $('#my-name').removeClass("name").addClass("scroll-name");
