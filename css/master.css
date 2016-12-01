@@ -1,22 +1,30 @@
 #jumbo-header {
-  background: red;
-  height: 500px;
+  background: white;
+  min-height: 720px;
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
 #about-section {
-  background: black;
+  background: white;
   height: 500px;
 }
 
 #projects-section {
-  background: red;
+  background: white;
   height: 500px;
+  margin-bottom: 500px;
 }
 
 #contact-section {
-  background: black;
+  background: #222222;
   height: 500px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
 
 #name-cont {
@@ -30,7 +38,14 @@
 }
 
 h2 {
-  color: white;
+  color: #222222;
+}
+
+hr {
+  background: #222222;
+  border: 0;
+  height: 2px;
+  width: 60%;
 }
 
 .centered {
@@ -105,7 +120,7 @@ h2 {
     text-align: center !important;
   }
 }
-
+/*
 @media (min-width: 562px) {
   #jumbo-header {
     padding-top: 250px;

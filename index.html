@@ -40,23 +40,29 @@
     </div>
   </div>
 
-  <header class="jumbotron" id="jumbo-header" style="color:red">
+  <header class="jumbotron" id="jumbo-header">
     <div class="container centered">
       <h2>Hi, I'm Frederick Murphy, but you can call me Eric.<br>I like to create things.</h2>
     </div>
   </header>
 
   <body>
-    <section class="container centered" id="about-section">
-      <h2>About Me</h2>
+    <section class="container-fluid centered" id="about-section">
+      <hr noshade>
+      <h2>about</h2>
     </section>
 
-    <section class="container centered" id="projects-section">
-      <h2>Recent Projects</h2>
+    <section class="container-fluid centered" id="projects-section">
+      <hr noshade>
+      <h2>projects</h2>
     </section>
 
-    <section class="container centered" id="contact-section">
-      <h2>Contact Me</h2>
+    <section class="container-fluid centered" id="contact-section">
+      <hr noshade style="background:white">
+      <h2 style="color:white">contact</h2>
+      <div class="container">
+        <div class="col-sm-6">
+          <h3 style="color:white">frederick.a.murphy@gmail.com</h3>
     </section>
   </body>
 
@@ -66,7 +72,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/typed.js"></script>
     <script>
-    $(function() {
+    $(function () {
       $(".name").typed({
         strings: ["Fred<span style='color:red'>eric</span>k Murphy"],
         typeSpeed: 0,
@@ -74,13 +80,25 @@
       });
     });
 
+    $(window).resize(function () {
+          var headerHeight = $(window).height();
+          $('#jumbo-header').css('height', headerHeight);
+          console.log("New window size is " + headerHeight);
+    });
+
     $(document).ready(function () {
       $('.nav-link').on('click', function () {
         var link = $(this).attr('href');
         $('#navbar-collapse-1').collapse('hide');
-        $('html, body').animate({
-          scrollTop: $(link).offset().top - 122
-        }, 500);
+        if (link == "#contact-section") {
+          $('html, body').animate({
+            scrollTop: document.body.scrollHeight
+          }, 500);
+        } else {
+          $('html, body').animate({
+            scrollTop: $(link).offset().top - 137
+          }, 500);
+        }
         return false;
       })
     });
