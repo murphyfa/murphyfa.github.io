@@ -1,6 +1,35 @@
 #jumbo-header {
-  background: #222222;
+  background: red;
   height: 500px;
+  margin-bottom: 0;
+}
+
+#about-section {
+  background: black;
+  height: 500px;
+}
+
+#projects-section {
+  background: red;
+  height: 500px;
+}
+
+#contact-section {
+  background: black;
+  height: 500px;
+}
+
+#name-cont {
+  background-color: #222222;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding-top: 65px;
+}
+
+h2 {
+  color: white;
 }
 
 .centered {
@@ -9,7 +38,7 @@
 
 .name {
   color: white;
-  font-size: 80px !important;
+  font-size: 70px !important;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -70,13 +99,13 @@
 
 }
 
-@media (min-width: 700px) {
+@media (min-width: 562px) {
   #jumbo-header {
     padding-top: 250px;
   }
 }
 
-@media (max-width: 699px) {
+@media (max-width: 561px) {
   #jumbo-header {
     padding-top: 350px;
   }

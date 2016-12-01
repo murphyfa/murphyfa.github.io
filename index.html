@@ -23,39 +23,40 @@
                   <span class="icon-bar"></span>
               </button>
           </div>
-
           <div class="collapse navbar-collapse" id="navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li><a href="#jumbo-header">Home</a></li>
-                  <li><a href="#about-section">About</a></li>
-                  <li><a href="#projects-section">Projects</a></li>
-                  <li><a href="#contact-section">Contact</a></li>
+                  <li><a href="#jumbo-header" class="nav-link">Home</a></li>
+                  <li><a href="#about-section" class="nav-link">About</a></li>
+                  <li><a href="#projects-section" class="nav-link">Projects</a></li>
+                  <li><a href="#contact-section" class="nav-link">Contact</a></li>
               </ul>
-          </div>
-
-          <div class="container" style="text-align:center">
-            <span class="mn name" id="#my-name"></span>
           </div>
       </div>
   </nav>
 
-  <header class="jumbotron" id="jumbo-header">
+  <div class="container-fluid" id="name-cont">
+    <div class="row">
+      <span class="name" id="my-name"></span>
+    </div>
+  </div>
+
+  <header class="jumbotron" id="jumbo-header" style="color:red">
     <div class="container centered">
-      <h2 style="color:white">Hi, I'm Frederick Murphy, but you can call me Eric. I like to create things.<small></small></h2>
+      <h2>Hi, I'm Frederick Murphy, but you can call me Eric.<br>I like to create things.</h2>
     </div>
   </header>
 
   <body>
-    <section class="container" id="about-section" style="height:500px">
-
+    <section class="container centered" id="about-section">
+      <h2>About Me</h2>
     </section>
 
-    <section class="container" id="projects-section" style="height:500px;background-color:black">
-
+    <section class="container centered" id="projects-section">
+      <h2>Recent Projects</h2>
     </section>
 
-    <section class="container" id="contact-section" style="height:500px">
-
+    <section class="container centered" id="contact-section">
+      <h2>Contact Me</h2>
     </section>
   </body>
 
@@ -74,14 +75,25 @@
     });
 
     $(document).ready(function () {
+      $('.nav-link').on('click', function () {
+        var link = $(this).attr('href');
+        console.log(link);
+        $('html, body').animate({
+          scrollTop: $(link).offset().top
+        }, 500);
+        return false;
+      })
+    });
+
+    $(document).ready(function () {
       $(document).scroll(function () {
         var $document = $(document);
         if ($document.scrollTop() >= 100) {
-          $('.mn').removeClass("name").addClass("scroll-name");
-          $('.mn').html("<span style='color:red'>eric</span>.m");
+          $('#my-name').removeClass("name").addClass("scroll-name");
+          $('#my-name').html("<span style='color:red'>eric</span>.m");
         } else {
-          $('.mn').removeClass("scroll-name").addClass("name");
-          $('.mn').html("Fred<span style='color:red'>eric</span>k Murphy");
+          $('#my-name').removeClass("scroll-name").addClass("name");
+          $('#my-name').html("Fred<span style='color:red'>eric</span>k Murphy");
         }
       });
     });
