@@ -77,15 +77,38 @@
     <section class="container-fluid centered" id="contact-section">
       <hr noshade style="background:white">
       <h2 style="color:white">contact</h2>
-      <div class="container">
-        <div class="col-sm-6 align-right">
-          <h3><a href="mailto:frederick.a.murphy@gmail.com" style="color:white">frederick.a.murphy@gmail.com <span class="glyphicon glyphicon-envelope"></span></a></h3>
-          <h3><a href="#" style="color:white">download my resume <span class="glyphicon glyphicon-file"></span></a></h3>
+
+      <div class="container" id="web-contact"> <!-- this will show on pc -->
+        <div class="row">
+          <div class="col-sm-6 align-right">
+            <h3><a href="mailto:frederick.a.murphy@gmail.com" style="color:white">frederick.a.murphy@gmail.com <span class="glyphicon glyphicon-envelope"></span></a></h3>
+            <h3><a href="#" style="color:white">github <img class="con-icon" src="images/GitHub_Logo.png"></a></h3>
+          </div>
+          <div class="col-sm-6 align-left">
+            <h3><a href="#" style="color:white"><span class="glyphicon glyphicon-file"></span> download my resume</a></h3>
+            <h3><a href="#" style="color:white"><img class="con-icon" src="images/linkedin_logo.png"> linkedin</a></h3>
+          </div>
         </div>
-        <div class="col-sm-6 align-left">
-          <h3><a href="#" style="color:white"><img class="con-icon" src="images/GitHub_Logo.png"> github</a></h3>
-          <h3><a href="#" style="color:white"><img class="con-icon" src="images/linkedin_logo.png"> linkedin</a></h3>
+      </div>
+
+      <div class="container centered" id="mobile-contact"> <!-- this will show on mobile -->
+        <div class="row">
+          <div class="col-xs-6">
+            <h1><a href="mailto:frederick.a.murphy@gmail.com" style="color:white"><span class="glyphicon glyphicon-envelope"></span><br>email</a></h2>
+          </div>
+          <div class="col-xs-6">
+            <h1><a href="#" style="color:white"><span class="glyphicon glyphicon-file"></span><br>resume</a></h2>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <h1><a href="#" style="color:white"><img class="con-icon" src="images/GitHub_Logo.png"></span><br>github</a></h2>
+          </div>
+          <div class="col-xs-6">
+            <h1><a href="#" style="color:white"><img class="con-icon" src="images/linkedin_logo.png"><br>linkedin</a></h2>
+          </div>
+        </div>
+      </div>
     </section>
   </body>
 
@@ -98,6 +121,11 @@
     var headerHeight;
     var isScrolled;
 
+    function contactImgs () {
+
+    }
+
+    /* typing effect on name */
     $(function () {
       $(".name").typed({
         strings: ["Fred<span style='color:red'>eric</span>k Murphy<h2>Aspiring Web Developer</h2>"],
@@ -106,6 +134,7 @@
       })
     })
 
+    /* adjust the header height as viewport changes */
     function fixHeight () {
       if (isScrolled != true) {
         headerHeight = $(window).height();
@@ -115,11 +144,13 @@
 
     $(document).ready(function () {
       $(window).resize(fixHeight());
+      console.log("1");
     })
 
     $(window).on('resize', fixHeight);
+    console.log("2");
 
-
+    /* smooth scrolling for navbar links */
     $(document).ready(function () {
       $('.nav-link').on('click', function () {
         var link = $(this).attr('href');
@@ -141,6 +172,7 @@
       })
     })
 
+    /* animation effects for the header and text */
     $(document).ready(function () {
       $(document).scroll(function () {
         var testHeight;
@@ -167,8 +199,7 @@
           isScrolled = false;
         }
       })
-    })
-
+    });
     </script>
   </body>
 </html>

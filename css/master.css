@@ -213,10 +213,18 @@ hr {
     text-align: left;
   }
 
+  #mobile-contact {
+    display: none;
+  }
+
 }
 
 @media (max-width: 767px) {
   .navbar-collapse {
     text-align: center !important;
+  }
+
+  #web-contact {
+    display: none;
   }
 }
