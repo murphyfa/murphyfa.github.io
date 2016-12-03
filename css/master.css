@@ -1,16 +1,3 @@
-.name-jumbo {
-  background: white;
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 1;
-}
-
 #project-image {
   max-height: : 400px;
   display: inline-block;
@@ -25,7 +12,6 @@
 }
 
 #about-section {
-  margin-top: 350px;
   background: white;
   height: 500px;
 }
@@ -33,12 +19,12 @@
 #projects-section {
   background: white;
   padding-bottom: 30px;
-  margin-bottom: 500px;
+  margin-bottom: 400px;
 }
 
 #contact-section {
   background: #222222;
-  height: 500px;
+  height: 400px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -77,6 +63,74 @@ hr {
   border: 0;
   height: 2px;
   width: 60%;
+}
+
+.loading {
+  overflow: hidden;
+}
+
+.loaded {
+  overflow: auto;
+}
+
+.name-jumbo {
+  background: white;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.con-icon {
+  height: 25px;
+  width: auto;
+  bottom: 0;
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+.glyphicon {
+  font-size: 25px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.name {
+  color: #222222;
+  font-size: 70px !important;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.scroll-name {
+  color: #222222;
+  font-size: 40px !important;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+    color: red;
+    font-size: 80px;
 }
 
 @-moz-keyframes bounce {
@@ -128,52 +182,6 @@ hr {
   }
 }
 
-.con-icon {
-  height: 25px;
-  width: auto;
-  bottom: 0;
-}
-
-.bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
-}
-
-.glyphicon {
-  font-size: 25px;
-}
-
-.centered {
-  text-align: center;
-}
-
-.name {
-  color: #222222;
-  font-size: 70px !important;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.scroll-name {
-  color: #222222;
-  font-size: 40px !important;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.typed-cursor{
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-    color: red;
-    font-size: 80px;
-}
 @keyframes blink{
     0% { opacity:1; }
     50% { opacity:0; }

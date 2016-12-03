@@ -39,7 +39,8 @@
   <header class="jumbotron name-jumbo" id="jumbo-header">
     <div class="container-fluid">
       <div class="row">
-        <span class="name" id="my-name"></span>
+      <!--  <span class="name" id="my-name"></span> -->
+      <span class="name" id="my-name">Fred<span style='color:red'>eric</span>k Murphy</h1><h2>Aspiring Web Developer</h2></span>
       </div>
       <div id="down-arrow">
         <a href="#about-section" class="nav-link" style="color:#222222"><div class="glyphicon glyphicon-chevron-down bounce"></div></a>
@@ -48,6 +49,10 @@
   </header>
 
   <body>
+    <section id="filler">
+      <div class="container-fluid" style="height:350px"></div>
+    </section>
+
     <section class="container-fluid centered" id="about-section">
       <hr noshade>
       <h2>about</h2>
@@ -117,89 +122,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/typed.js"></script>
-    <script>
-    var headerHeight;
-    var isScrolled;
-
-    function contactImgs () {
-
-    }
-
-    /* typing effect on name */
-    $(function () {
-      $(".name").typed({
-        strings: ["Fred<span style='color:red'>eric</span>k Murphy<h2>Aspiring Web Developer</h2>"],
-        typeSpeed: 0,
-        showCursor: false
-      })
-    })
-
-    /* adjust the header height as viewport changes */
-    function fixHeight () {
-      if (isScrolled != true) {
-        headerHeight = $(window).height();
-        $('#jumbo-header').css('height', headerHeight);
-      }
-    }
-
-    $(document).ready(function () {
-      $(window).resize(fixHeight());
-      console.log("1");
-    })
-
-    $(window).on('resize', fixHeight);
-    console.log("2");
-
-    /* smooth scrolling for navbar links */
-    $(document).ready(function () {
-      $('.nav-link').on('click', function () {
-        var link = $(this).attr('href');
-        $('#navbar-collapse-1').collapse('hide');
-        if (link == "#contact-section") {
-          $('html, body').animate({
-            scrollTop: document.body.scrollHeight
-          }, 500);
-        } else if (link == "#jumbo-header") {
-          $('html, body').animate({
-            scrollTop: 0
-          }, 500);
-        } else {
-          $('html, body').animate({
-            scrollTop: $(link).offset().top - 137
-          }, 500);
-        }
-        return false;
-      })
-    })
-
-    /* animation effects for the header and text */
-    $(document).ready(function () {
-      $(document).scroll(function () {
-        var testHeight;
-        var marginSize;
-        var $document = $(document);
-
-        if ($(window).width() <= 768) {
-          marginSize = "45px"
-        } else {
-          marginSize = "30px"
-        }
-
-        if ($document.scrollTop() >= 100) {
-          $('#jumbo-header').stop().animate({height:"70px", marginTop:marginSize}, 500);
-          $('#down-arrow').fadeOut(100);
-          $('#my-name').removeClass("name").addClass("scroll-name");
-          $('#my-name').html("<span style='color:red'>eric</span>.m");
-          isScrolled = true;
-        } else {
-          $('#jumbo-header').stop().animate({height:headerHeight, marginTop:"0px"}, 500);
-          $('#down-arrow').fadeIn(500);
-          $('#my-name').removeClass("scroll-name").addClass("name");
-          $('#my-name').html("Fred<span style='color:red'>eric</span>k Murphy<h2>Aspiring Web Developer</h2>");
-          isScrolled = false;
-        }
-      })
-    });
-    </script>
+    <script src="js/master.js"></script>
   </body>
 </html>
