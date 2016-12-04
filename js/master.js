@@ -1,11 +1,10 @@
 var headerHeight;
 var isScrolled;
-
-function contactImgs () {
-
-}
+var footerHeight;
 
 /* typing effect on name */
+/* disabled until i can fix an issue when the user
+scrolls while it is still typing */
 /*
 $(function () {
   $(".name").typed({
@@ -15,6 +14,12 @@ $(function () {
   });
 });
 */
+
+/* adjust the bottom margin on the project section to ensure full visibility of the contact section */
+function fixFooter () {
+  footerHeight = $('#contact-section').outerHeight();
+  $('#projects-section').css('margin-bottom', footerHeight)
+}
 
 /* adjust the header height as viewport changes */
 function fixHeight () {
@@ -26,9 +31,11 @@ function fixHeight () {
 
 $(document).ready(function () {
   $(window).resize(fixHeight());
+  $(window).resize(fixFooter());
 })
 
 $(window).on('resize', fixHeight);
+$(window).on('resize', fixFooter);
 
 /* smooth scrolling for navbar links */
 $(document).ready(function () {

@@ -13,18 +13,18 @@
 
 #about-section {
   background: white;
-  height: 500px;
+  padding-bottom: 30px;
 }
 
 #projects-section {
   background: white;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   margin-bottom: 400px;
 }
 
 #contact-section {
   background: #222222;
-  height: 400px;
+  padding-bottom: 30px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -39,6 +39,10 @@
   right: 0;
   padding-top: 65px;
   padding-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
 }
 
 h1 {
@@ -104,6 +108,10 @@ hr {
 
 .centered {
   text-align: center;
+}
+
+.justified {
+  text-align: justify;
 }
 
 .name {
