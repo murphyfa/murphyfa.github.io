@@ -72,17 +72,19 @@ $(document).ready(function () {
       marginSize = "30px"
     }
 
-    if ($document.scrollTop() >= 100) {
+    if ($document.scrollTop() >= 10) {
       $('#jumbo-header').stop().animate({height:"70px", marginTop:marginSize}, 500);
       $('#down-arrow').fadeOut(100);
       $('#my-name').removeClass("name").addClass("scroll-name");
       $('#my-name').html("<span style='color:red'>eric</span>.m");
+      $('#contact-section').css('background:#222222');
       isScrolled = true;
     } else {
       $('#jumbo-header').stop().animate({height:headerHeight, marginTop:"0px"}, 500);
       $('#down-arrow').fadeIn(500);
       $('#my-name').removeClass("scroll-name").addClass("name");
       $('#my-name').html("Fred<span style='color:red'>eric</span>k Murphy<h2>Aspiring Web Developer</h2>");
+      $('#contact-section').css('background:white');
       isScrolled = false;
     }
   })
