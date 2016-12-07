@@ -15,6 +15,17 @@ $(function () {
 });
 */
 
+
+/* popovers */
+$(document).ready(function () {
+  $('[data-toggle="popover"]')
+    .popover()
+    .click(function(e) {
+    e.preventDefault();
+ });
+  return true;
+});
+
 /* adjust the bottom margin on the project section to ensure full visibility of the contact section */
 function fixFooter () {
   footerHeight = $('#contact-section').outerHeight();
@@ -83,7 +94,7 @@ $(document).ready(function () {
       $('#jumbo-header').stop().animate({height:headerHeight, marginTop:"0px"}, 500);
       $('#down-arrow').fadeIn(500);
       $('#my-name').removeClass("scroll-name").addClass("name");
-      $('#my-name').html("Fred<span style='color:red'>eric</span>k Murphy<h2>Aspiring Web Developer</h2>");
+      $('#my-name').html("Fred<span style='color:red'>eric</span>k Murphy<h2>Junior Web Developer</h2>");
       $('#contact-section').css('background:white');
       isScrolled = false;
     }

@@ -71,6 +71,10 @@ hr {
   width: 60%;
 }
 
+.popover {
+  text-align: center !important;
+}
+
 .loading {
   overflow: hidden;
 }
