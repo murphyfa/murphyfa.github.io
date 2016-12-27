@@ -94,7 +94,7 @@ $(document).ready(function () {
       $('#jumbo-header').stop().animate({height:headerHeight, marginTop:"0px"}, 500);
       $('#down-arrow').fadeIn(500);
       $('#my-name').removeClass("scroll-name").addClass("name");
-      $('#my-name').html("Fred<span style='color:red'>eric</span>k Murphy<h2>Junior Web Developer</h2>");
+      $('#my-name').html("Fred<span style='color:red'>eric</span>k Murphy<h2>Web Developer</h2>");
       $('#contact-section').css('background:white');
       isScrolled = false;
     }
