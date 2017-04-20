@@ -2,6 +2,7 @@ var headerHeight;
 var isScrolled = false;
 var footerHeight;
 var marginSize;
+var linkClicked = false;
 
 /* typing effect on name */
 /* disabled until i can fix an issue when the user
@@ -66,6 +67,8 @@ $(window).on('resize', fixFooter);
 $(document).ready(function () {
   $('.nav-link').on('click', function () {
     var link = $(this).attr('href');
+    linkClicked = true;
+    HeaderAnimation();
     $('#navbar-collapse-1').collapse('hide');
     if (link == "#contact-section") {
       $('html, body').animate({
@@ -84,22 +87,26 @@ $(document).ready(function () {
   })
 })
 
-/* animation effects for the header and text */
-$(document).ready(function () {
-  $(document).scroll(function () {
-    var testHeight;
-    var $document = $(document);
+function HeaderAnimation() {
+  var testHeight;
+  var $document = $(document);
 
-    if ($document.scrollTop() >= 10 && isScrolled == false) {
-      $('#jumbo-header').stop().animate({height:"70px", marginTop:marginSize}, 500);
-      $('#down-arrow').fadeOut(100);
-      $('#my-name').removeClass("name").addClass("scroll-name");
-      $('#my-name').html("<span style='color:red'>eric</span>.m");
-      $('#contact-section').css('background:#222222');
+  if ($document.scrollTop() >= 10 || isScrolled == false) {
+    $('#jumbo-header').stop().animate({height:"70px", marginTop:marginSize}, 500);
+    $('#down-arrow').fadeOut(100);
+    $('#my-name').removeClass("name").addClass("scroll-name");
+    $('#my-name').html("<span style='color:red'>eric</span>.m");
+    $('#contact-section').css('background:#222222');
+    if (linkClicked != true) {
       $('html, body').animate({
         scrollTop: 0
       }, 500);
-      isScrolled = true;
     }
-  })
+    isScrolled = true;
+  }
+}
+
+/* animation effects for the header and text */
+$(document).ready(function () {
+  $(document).scroll(HeaderAnimation);
 });
