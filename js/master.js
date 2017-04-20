@@ -1,6 +1,7 @@
 var headerHeight;
 var isScrolled = false;
 var footerHeight;
+var marginSize;
 
 /* typing effect on name */
 /* disabled until i can fix an issue when the user
@@ -34,9 +35,20 @@ function fixFooter () {
 
 /* adjust the header height as viewport changes */
 function fixHeight () {
+
+  if ($(window).width() < 768) {
+    marginSize = "45px"
+  } else {
+    marginSize = "30px"
+  }
+
   if (isScrolled != true) {
     headerHeight = $(window).height();
     $('#jumbo-header').css('height', headerHeight);
+  }
+
+  if (isScrolled == true) {
+    $('#jumbo-header').css('margin-top', marginSize);
   }
 }
 
@@ -76,14 +88,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(document).scroll(function () {
     var testHeight;
-    var marginSize;
     var $document = $(document);
-
-    if ($(window).width() <= 768) {
-      marginSize = "45px"
-    } else {
-      marginSize = "30px"
-    }
 
     if ($document.scrollTop() >= 10 && isScrolled == false) {
       $('#jumbo-header').stop().animate({height:"70px", marginTop:marginSize}, 500);
@@ -95,7 +100,6 @@ $(document).ready(function () {
         scrollTop: 0
       }, 500);
       isScrolled = true;
-      console.log(isScrolled)
     }
   })
 });
