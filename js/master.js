@@ -3,6 +3,8 @@ var isScrolled = false;
 var footerHeight;
 var marginSize;
 var linkClicked = false;
+var testHeight;
+var $document = $(document);
 
 /* typing effect on name */
 /* disabled until i can fix an issue when the user
@@ -88,10 +90,7 @@ $(document).ready(function () {
 })
 
 function HeaderAnimation() {
-  var testHeight;
-  var $document = $(document);
-
-  if ($document.scrollTop() >= 10 || isScrolled == false) {
+  if (isScrolled != true) {
     $('#jumbo-header').stop().animate({height:"70px", marginTop:marginSize}, 500);
     $('#down-arrow').fadeOut(100);
     $('#my-name').removeClass("name").addClass("scroll-name");
@@ -108,5 +107,9 @@ function HeaderAnimation() {
 
 /* animation effects for the header and text */
 $(document).ready(function () {
-  $(document).scroll(HeaderAnimation);
+  $(document).scroll(function() {
+    if ($document.scrollTop() >= 1) {
+      HeaderAnimation();
+    }
+  });
 });
