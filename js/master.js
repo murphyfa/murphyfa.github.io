@@ -6,20 +6,6 @@ var linkClicked = false;
 var testHeight;
 var $document = $(document);
 
-/* typing effect on name */
-/* disabled until i can fix an issue when the user
-scrolls while it is still typing */
-/*
-$(function () {
-  $(".name").typed({
-    strings: ["Fred<span style='color:red'>eric</span>k Murphy<h2>Aspiring Web Developer</h2>"],
-    typeSpeed: 0,
-    showCursor: false
-  });
-});
-*/
-
-
 /* popovers */
 $(document).ready(function () {
   $('[data-toggle="popover"]')
